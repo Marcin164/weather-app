@@ -5,7 +5,7 @@ import './style.css'
 
 const AirQualityCard = () => {
   return (
-    <div className="card">
+    <div className="air-quality-card">
       <Header title="Air Quality"/>
       <AirStatus />
       <AirQualityTags/>

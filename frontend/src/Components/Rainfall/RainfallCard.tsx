@@ -1,14 +1,14 @@
 import Header from "../Header"
 import RainfallChart from "./RainfallChart"
+import './style.css'
 
-
-const Card = () => {
+const RainfallCard = () => {
     return (
-        <div className="card">
+        <div className="rainfall-card">
         <Header title="Rainfall"/>
         <RainfallChart/>
       </div>
     )
 }
 
-export default Card
+export default RainfallCard
