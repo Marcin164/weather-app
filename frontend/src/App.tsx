@@ -6,11 +6,13 @@ import './style.css'
 import SunriseCard from './Components/Sunrise/SunriseCard';
 import SpecialEvents from './Components/SpecialEvents/SpecialEvents';
 import TemperatureAndHumidity from './Components/TemperatureAndHumidity/TemperatureAndHumidity';
+import DaysNavbar from './Components/DaysNavbar/DaysNavbar';
 
 function App() {
   return (
-    <div className="">
+    <div className="dashboard">
       <Topbar/>
+      <DaysNavbar/>
       <AirQualityCard/>
       <RainfallCard/>
       <WeatherAndWindCard/>
