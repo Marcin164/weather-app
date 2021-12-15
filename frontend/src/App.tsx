@@ -4,6 +4,8 @@ import RainfallCard from './Components/Rainfall/RainfallCard'
 import WeatherAndWindCard from './Components/WeatherAndWind/WeatherAndWindCard';
 import './style.css'
 import SunriseCard from './Components/Sunrise/SunriseCard';
+import SpecialEvents from './Components/SpecialEvents/SpecialEvents';
+import TemperatureAndHumidity from './Components/TemperatureAndHumidity/TemperatureAndHumidity';
 
 function App() {
   return (
@@ -13,6 +15,8 @@ function App() {
       <RainfallCard/>
       <WeatherAndWindCard/>
       <SunriseCard/>
+      <SpecialEvents/>
+      <TemperatureAndHumidity/>
     </div>
   );
 }

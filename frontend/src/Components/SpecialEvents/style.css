@@ -1,0 +1,27 @@
+.special-events-card{
+    width:100%;
+    height: 350px;
+    background:white;
+}
+
+.events-panel{
+    display: flex;
+    flex-wrap:wrap;
+    align-content: flex-start;
+    width:calc(100% - 30px);
+    height:calc(100% - 40px);
+    padding:0 15px;
+    gap: 10px;
+}
+
+.event-tile{
+    width:60px;
+    height:60px;
+    background: #E9E9E9;
+    border-radius:10px;
+}
+
+.event-tile--img{
+    width:60px;
+    height:60px;
+}
