@@ -9,7 +9,6 @@
 }
 
 .show-navbar__button{
-    content: "";
     width:10%;
     height:50px;
     background:rgb(155, 155, 155);
@@ -70,25 +69,25 @@
     border:none;
 }
 
-.show-navbar{
-    animation: showNavbar 0.5s ease-in-out;
+.show-day-navbar{
+    animation: showDayNavbar 0.5s ease-in-out;
     left:0;
 }
 
-.hide-navbar{
+.hide-day-navbar{
     left:-85%;
-    animation: hideNavbar 0.5s ease-in-out;
+    animation: hideDayNavbar 0.5s ease-in-out;
 }
 
-.show-overlay{
+.show-day-overlay{
     display:block;
 }
 
-.hide-overlay{
+.hide-day-overlay{
     display:none;
 }
 
-@keyframes showNavbar {
+@keyframes showDayNavbar {
     from{
         left:-85%;
     }
@@ -97,7 +96,7 @@
     }
 }
 
-@keyframes hideNavbar{
+@keyframes hideDayNavbar {
     from{
         left:0;
     }

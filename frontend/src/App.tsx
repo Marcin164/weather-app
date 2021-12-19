@@ -7,11 +7,13 @@ import SunriseCard from './Components/Sunrise/SunriseCard';
 import SpecialEvents from './Components/SpecialEvents/SpecialEvents';
 import TemperatureAndHumidity from './Components/TemperatureAndHumidity/TemperatureAndHumidity';
 import DaysNavbar from './Components/DaysNavbar/DaysNavbar';
+import CitiesNavbar from './Components/CitiesNavbar/CitiesNavbar';
 
 function App() {
   return (
     <div className="dashboard">
       <Topbar/>
+      <CitiesNavbar/>
       <DaysNavbar/>
       <AirQualityCard/>
       <RainfallCard/>

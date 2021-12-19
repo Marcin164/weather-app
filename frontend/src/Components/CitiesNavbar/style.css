@@ -1,0 +1,97 @@
+.cities-navbar{
+    width:85%;
+    height:100vh;
+    position:absolute;
+    top: 0;
+    right:0;
+    background:#EEF8FE;
+    z-index:10;
+    overflow-y: scroll;
+}
+
+.show-cities-navbar__button{
+    width:10%;
+    height:50px;
+    background:rgb(155, 155, 155);
+    position:absolute;
+    right:0;
+    top:0;
+    border:none;
+}
+
+.city-tile{
+    height: 70px;
+    padding:5px;
+    margin:10px;
+    background:#FFFFFF;
+    display:flex;
+    border-radius:10px;
+}
+
+.day-tile__img{
+    width:70px;
+    height:70px;
+}
+
+.city-tile__div{
+    width:calc(100% - 70px);
+    height:100%;
+}
+
+.city-tile__div--city, .city-tile__div--weather{
+    height:50%;
+    display:flex;
+    padding:0 10px;
+    align-items: center;
+}
+
+.city-tile__div--city{
+    font-size:24px;
+    font-weight:bold;
+}
+
+.city-overlay{
+    z-index:9;
+    background:rgba(128, 128, 128, 0.308);
+    width:100vw;
+    height:100vh;
+    position:absolute;
+    top:0;
+    border:none;
+}
+
+.show-city-navbar{
+    animation: showCityNavbar 0.5s ease-in-out;
+    right:0;
+}
+
+.hide-city-navbar{
+    right:-85%;
+    animation: hideCityNavbar 0.5s ease-in-out;
+}
+
+.show-city-overlay{
+    display:block;
+}
+
+.hide-city-overlay{
+    display:none;
+}
+
+@keyframes showCityNavbar {
+    from{
+        right:-85%;
+    }
+    to{
+        right:0;
+    }
+}
+
+@keyframes hideCityNavbar{
+    from{
+        right:0;
+    }
+    to{
+        right:-85%;
+    }
+}
