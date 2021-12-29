@@ -1,11 +1,11 @@
 import Topbar from './Components/Topbar';
-import AirQualityCard from './Components/AirQuality/AirQualityCard';
-import RainfallCard from './Components/Rainfall/RainfallCard'
-import WeatherAndWindCard from './Components/WeatherAndWind/WeatherAndWindCard';
+import AirQuality from './Components/Cards/AirQuality';
+import Rainfall from './Components/Cards/Rainfall'
+import WeatherAndWind from './Components/Cards/WeatherAndWind';
 import './style.css'
-import SunriseCard from './Components/Sunrise/SunriseCard';
-import SpecialEvents from './Components/SpecialEvents/SpecialEvents';
-import TemperatureAndHumidity from './Components/TemperatureAndHumidity/TemperatureAndHumidity';
+import Sunrise from './Components/Cards/Sunrise';
+import SpecialEvents from './Components/Cards/Events';
+import TemperatureAndHumidity from './Components/Cards/TemperatureAndHumidity';
 import DaysNavbar from './Components/DaysNavbar/DaysNavbar';
 import CitiesNavbar from './Components/CitiesNavbar/CitiesNavbar';
 
@@ -13,14 +13,14 @@ function App() {
   return (
     <div className="dashboard">
       <Topbar/>
-      <CitiesNavbar/>
       <DaysNavbar/>
-      <AirQualityCard/>
-      <RainfallCard/>
-      <WeatherAndWindCard/>
-      <SunriseCard/>
+      <AirQuality/>
+      <Rainfall/>
+      <WeatherAndWind/>
+      <Sunrise/>
       <SpecialEvents/>
       <TemperatureAndHumidity/>
+      <CitiesNavbar/>
     </div>
   );
 }

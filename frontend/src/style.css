@@ -1,13 +1,19 @@
-html, body{
+html, body, #root{
     font-family: 'Roboto', sans-serif;
     margin:0;
-    overflow:hidden;
     height:100vh;
+    width:100vw;
+    overflow:hidden;
+    position:relative;
 }
 
 .dashboard{
     height:100vh;
+    width:100vw;
     overflow-y: scroll;
+    overflow-x:hidden;
+    display:flex;
+    flex-wrap: wrap;
 }
 
 .topbar{
@@ -28,3 +34,214 @@ html, body{
     font-weight:bold;
     font-size:24px;
 }
+
+.card{
+    height: 350px;
+    background:white;
+    margin:5px;
+    box-sizing:border-box;
+}
+
+/* cards */
+
+.air-quality-card, .rainfall-card, .events-card, .sunrise-card, .temperature-and-humidity-card, .weather-and-wind-card{
+    width:100%;
+}
+
+/* status */
+
+.status{
+    height: 120px;
+    display:flex;
+}
+
+.status--img{
+    width: 100px;
+    height:120px;
+    margin-left:5px;
+}
+
+.status--p{
+    color:#8A8A8A
+}
+
+/* tiles board */
+
+.tiles{
+    padding:4px; 
+    overflow-x: auto;
+    white-space:nowrap
+}
+
+/* air quality tile  */
+
+.air-quality-tile{
+    display: inline-block;
+    width: 85px;
+    height: 120px;
+    background: #DBFFDA;
+    border-radius:10px;
+    margin:0 3px;
+    color:#21D01E;
+}
+
+.air-quality-tile__header{
+    font-size:32px;
+    font-weight:bold;
+    height:55%;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.air-quality-tile__value{
+    font-size:22px;
+    height:45%;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Events */
+
+.events-panel{
+    display: flex;
+    flex-wrap:wrap;
+    align-content: flex-start;
+    width:calc(100% - 30px);
+    height:calc(100% - 40px);
+    padding:0 15px;
+    gap: 10px;
+}
+
+.event-tile{
+    width:60px;
+    height:60px;
+    background: #E9E9E9;
+    border-radius:10px;
+}
+
+.event-tile--img{
+    width:60px;
+    height:60px;
+}
+
+/* Sunrise */
+
+.sunrise-info{
+    width:90%;
+    height:120px;
+    border-radius:10px;
+    margin:20px 5%;
+}
+
+.sunrise-info{
+    background: #FFD8BD;
+}
+
+.sunrise-info__header{
+    color: #FF6900;
+    height: 50%;
+    font-weight: bold;
+    font-size: 30px;
+    display: flex;
+    align-items: center;
+    padding-left:20px;
+}
+
+.sunrise-info__details{
+    height:50%;
+}
+
+.sunrise-info__details--img{
+    width:60px;
+    height:60px;
+    float:left;
+    border:none;
+    outline:none;
+    margin:0 20px
+}
+
+.sunrise-info__details--div{
+    width:calc(100% - 140px);
+    height:100%;
+    float:right;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    color:#FF6900;
+    font-weight: bold;
+    font-size: 30px;
+    margin-right:20px;
+}
+
+/* Weather and Wind */
+
+.weather-tiles{
+    overflow-x: scroll;
+    width:100%;
+    height:180px;
+    white-space:nowrap;
+}
+
+.weather-tile{
+    display:inline-block;
+    background: #5EA9EF;
+    width: 65px;
+    height: 165px;
+    border-radius: 10px;
+    margin:0 4px;
+    color:white;
+}
+
+.weather-tile--img{
+    width:100%;
+    height:50px;
+}
+
+.weather-tile--h4{
+    width:100%;
+    text-align: center;
+}
+
+.weather-tile__wind{
+    display:flex;
+    justify-content: center;
+}
+
+.weather-and__wind--img{
+    width: 80px;
+    height:120px;
+}
+
+@media screen and (min-width:400px) and (max-width: 700px){
+    .status--img{
+        width: 120px;
+        height:120px;
+        margin-left:10px;
+    }
+
+    .air-quality-tag{
+        width:100px;
+        margin: 0 6px;
+    }
+
+    .special-events-card{
+        width:calc(50% - 10px);
+    }
+
+    .sunrise-card{
+        width:calc(50% - 10px);
+    }
+    
+    .weather-and__wind--img{
+        width: 120px;
+        height:120px;
+        margin-left:10px;
+    }
+
+    .air-quality-tag{
+        width:100px;
+        margin: 0 6px;
+    }
+}   

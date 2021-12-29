@@ -3,7 +3,7 @@
     height:100vh;
     position:absolute;
     top: 0;
-    right:0;
+    left:100%;
     background:#EEF8FE;
     z-index:10;
     overflow-y: scroll;
@@ -14,9 +14,27 @@
     height:50px;
     background:rgb(155, 155, 155);
     position:absolute;
-    right:0;
+    left:90%;
     top:0;
     border:none;
+}
+
+.cities-navbar--close{
+    padding:10px;
+    font-size: 28px;
+    font-weight:bold;
+    background:transparent;
+    outline: none;
+    border: none;
+}
+
+.cities-navbar--search{
+    box-sizing:border-box;
+    width:calc(100% - 20px);
+    padding:10px;
+    margin:10px;
+    border:none;
+    outline:none;
 }
 
 .city-tile{
@@ -62,11 +80,11 @@
 
 .show-city-navbar{
     animation: showCityNavbar 0.5s ease-in-out;
-    right:0;
+    left:15%;
 }
 
 .hide-city-navbar{
-    right:-85%;
+    left:100%;
     animation: hideCityNavbar 0.5s ease-in-out;
 }
 
@@ -80,18 +98,18 @@
 
 @keyframes showCityNavbar {
     from{
-        right:-85%;
+        left:100%;
     }
     to{
-        right:0;
+        left:15%;
     }
 }
 
 @keyframes hideCityNavbar{
     from{
-        right:0;
+        left:15%;
     }
     to{
-        right:-85%;
+        left:100%;
     }
 }

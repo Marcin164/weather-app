@@ -6,7 +6,7 @@ const WeatherTile = () => {
       <img src="" alt="img" className="weather-tile--img" />
       <h4 className="weather-tile--h4">Windy</h4>
       <div className="weather-tile__wind">
-        <img src="" alt="" />
+        <img src="" alt="" className="weather-tile__wind--img" />
         <span>2m/s</span>
       </div>
       <div className="weather-tile__wind">

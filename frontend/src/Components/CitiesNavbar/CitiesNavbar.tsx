@@ -19,7 +19,7 @@ const CitiesNavbar = () => {
         <button className="cities-navbar--close" onClick={toggleNavbar}>
           X
         </button>
-        <input type="search" className="search"/>
+        <input type="search" className="cities-navbar--search" placeholder="search..."/>
         <CityTile/>
         <CityTile/>
         <CityTile/>
