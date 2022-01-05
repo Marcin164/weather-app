@@ -1,27 +1,24 @@
-import Topbar from './Components/Topbar';
-import AirQuality from './Components/Cards/AirQuality';
-import Rainfall from './Components/Cards/Rainfall'
-import WeatherAndWind from './Components/Cards/WeatherAndWind';
-import './style.css'
-import Sunrise from './Components/Cards/Sunrise';
-import SpecialEvents from './Components/Cards/Events';
-import TemperatureAndHumidity from './Components/Cards/TemperatureAndHumidity';
-import DaysNavbar from './Components/DaysNavbar/DaysNavbar';
-import CitiesNavbar from './Components/CitiesNavbar/CitiesNavbar';
+import { useEffect, useState } from 'react';
+import axios from 'axios';
+import CitiesNavbar from './Components/CitiesNavbar';
+import DaysNavbar from './Components/DaysNavbar';
+import WeatherBoard from './Components/WeatherBoard';
 
 function App() {
+  const [weather, setWeather] = useState({})
+
+  useEffect(() => {
+    axios.get("http://127.0.0.1:4000/getWeather/Dubai/30.12.2021")
+    .then((result) => setWeather(result.data))
+    .catch((err) => {console.log(err)})
+  }, [])
+
   return (
-    <div className="dashboard">
-      <Topbar/>
+    <>
       <DaysNavbar/>
-      <AirQuality/>
-      <Rainfall/>
-      <WeatherAndWind/>
-      <Sunrise/>
-      <SpecialEvents/>
-      <TemperatureAndHumidity/>
+      <WeatherBoard/>
       <CitiesNavbar/>
-    </div>
+    </>
   );
 }
 
