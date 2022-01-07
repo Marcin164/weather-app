@@ -1,31 +1,43 @@
-html, body{
+html, body, #root{
     margin: 0;
     font-family:"Roboto";
     position:relative;
-}
-
-#root{
     width:100vw;
     height:100vh;
     position:relative;
-    overflow-x:none;
+    overflow:none;
 }
 
 .show-navbar{
+    box-sizing: border-box;
     width:10%;
     height:50px;
-    background:rgb(155, 155, 155);
+    background:#ffffff;
     position:absolute;
     top:0;
-    border:none;
+    z-index:5;
 }
 
 .show-days-navbar{
     left:0%;
+    border:0;
+    border-top:2px solid #1280E4;
+    border-left:2px solid #FFFFFF;
+    border-bottom: 2px solid #1280E4;
+    border-right:2px solid #1280E4;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
 }
 
 .show-cities-navbar{
     left:90%;
+    border:0;
+    border-top:2px solid #1280E4;
+    border-left:2px solid #1280E4;
+    border-bottom: 2px solid #1280E4;
+    border-right:2px solid #FFFFFF;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
 }
 
 .navbar{
@@ -59,7 +71,7 @@ html, body{
 
 .overlay{
     z-index:9;
-    background:rgba(128, 128, 128, 0.300);
+    background:rgba(255, 255, 255, 0.3);
     width:100vw;
     height:100vh;
     position:absolute;
@@ -158,12 +170,21 @@ html, body{
     }
 }
 
-/*
 .dashboard{
     float:left;
-    width:calc(100% - 460px);
+    width:100vw;
     height:100vh;
+    position:relative;
+    overflow-x: none;
 }
+
+.header{
+    width:calc(100% - 40px);
+    height:40px;
+    padding: 20px;
+    font-weight:bold;
+    font-size:24px;
+} 
 
 .card{
     box-sizing:border-box;
@@ -173,7 +194,177 @@ html, body{
     margin:10px;
 }
 
-.air-quality-card, .rainfall-card{
-    width:50%;
+.status{
+    box-sizing: border-box;
+    width:100%;
+    height:25%;
+    padding:5px 30px;
 }
-*/
+
+.status-header{
+    box-sizing:border-box;
+    height:50%;
+    font-weight: bold;
+    font-size:28px;
+    color:#1280E4;
+    display:flex;
+    align-items: center;
+}
+
+.status-info{
+    box-sizing:border-box;
+    height:50%;
+    color:gray;
+    display:flex;
+    align-items: center;
+}
+
+.air-quality-info{
+    box-sizing:border-box;
+    width:100%;
+    height:50%;
+    padding:20px 10px 0 10px;
+    overflow-x: scroll;
+    white-space:nowrap;
+}
+
+.air-quality-info-wrapper{
+    box-sizing:border-box;
+    display: inline-block;
+    width:90px;
+    height:110px;
+    border:3px solid #1280E4;
+    border-radius:10px;
+    background:#98CEFF;
+    color:#1280E4;
+    margin:0 5px;
+}
+
+.air-quality-info-wrapper-value{
+    height:60%;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    font-weight:bold;
+    font-size:28px;
+}
+
+.air-quality-info-wrapper-name{
+    height:40%;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    font-size:20px;
+}
+
+.weather-wind-info{
+    box-sizing: border-box;
+    width:100%;
+    padding:0 10px;
+    overflow-x: scroll;
+    white-space:nowrap
+}
+
+.weather-wind-wrapper{
+    width:90px;
+    height:220px;
+    border-right:2px solid #C4C4C4;
+    display:inline-block;
+}
+
+.weather-wind-wrapper-image{
+    width:80px;
+    height:80px;
+    margin:5px;
+    background: #EFEFEF;
+    display:block;
+}
+
+.weather-wind-wrapper-icon{
+    width:40px;
+    height:40px;
+    margin:6px 20px;
+    display:block;
+}
+
+.weather-wind-wrapper-info{
+    width:100%;
+    font-size:24px;
+    text-align:center;
+    color:#C4C4C4;
+    margin:5px 0;
+}
+
+.weather-wind-wrapper-hour{
+    width:100%;
+    font-size:24px;
+    color:#1280E4;
+    font-weight:bold;
+    text-align:center;
+    margin:5px 0;
+}
+
+.sunrise-moonrise-wrapper{
+    width:90%;
+    height:100px;
+    border-radius:10px;
+    margin:10px 5%;
+}
+
+.sunrise-moonrise-wrapper-header{
+    color: #1280E4;
+    height: 35px;
+    font-weight: bold;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    padding-left:20px;
+}
+
+.sunrise-moonrise-wrapper-info{
+    height:50%;
+}
+
+.sunrise-moonrise-wrapper-info-image{
+    width:50px;
+    height:50px;
+    float:left;
+    border:none;
+    outline:none;
+    margin:0 20px
+}
+
+.sunrise-moonrise-wrapper-info-hour{
+    width:calc(100% - 140px);
+    height:100%;
+    float:right;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    color:#1280E4;
+    font-weight: bold;
+    font-size: 30px;
+    margin-right:20px;
+}
+
+.events-panel{
+    display: flex;
+    flex-wrap:wrap;
+    align-content: flex-start;
+    box-sizing: border-box;
+    height: 240px;
+    padding:0 10px;
+    gap: 10px;
+}
+
+.event-info{
+    width:40px;
+    height:40px;
+    background: #E9E9E9;
+    border-radius:10px;
+}
+
+.event-info-img{
+    width:40px;
+    height:40px;
+}

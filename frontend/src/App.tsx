@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
-import CitiesNavbar from './Components/CitiesNavbar';
-import DaysNavbar from './Components/DaysNavbar';
+import CitiesNavbar from './Components/Navbars/CitiesNavbar';
+import DaysNavbar from './Components/Navbars/DaysNavbar';
 import WeatherBoard from './Components/WeatherBoard';
 
 function App() {
