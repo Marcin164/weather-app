@@ -1,5 +1,5 @@
 import React from "react";
-import { BarChart, XAxis, Bar } from "recharts";
+import {ResponsiveContainer, BarChart, XAxis, Bar } from "recharts";
 import Card from "../Card";
 
 interface Props {}
@@ -7,10 +7,12 @@ interface Props {}
 const Rainfall = (props: Props) => {
   return (
     <Card title="Rainfall" className="rainfall-card">
-      <BarChart>
+    <ResponsiveContainer width="100%" height={240}>
+      <BarChart className="chart" height={240}>
         <XAxis />
         <Bar dataKey="" />
       </BarChart>
+    </ResponsiveContainer>
     </Card>
   );
 };
