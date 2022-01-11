@@ -27,7 +27,7 @@ const WeatherSchema:Schema = new Schema({
 
 WeatherSchema.statics.getWeatherData = async function (data:any){
   if(!data) throw Error("And error with data occured!")
-  const weather = await this.find({
+  const weather = await this.findOne({
     city: data.city,
     date: data.date
   })
