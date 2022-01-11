@@ -13,7 +13,7 @@ const DaysNavbar = (props: Props) => {
   return (
     <>
       <button className="show-navbar show-days-navbar" onClick={toggleNavbar}>
-        +
+        <img src="/images/Clock.svg" alt="" className="show-navbar-image"></img>
       </button>
       <div
         className={`navbar days-navbar ${

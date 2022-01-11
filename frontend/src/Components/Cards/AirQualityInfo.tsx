@@ -1,15 +1,18 @@
 import React from "react";
 
-interface Props {}
+interface Props {
+  value:string;
+  tag:string
+}
 
 const AirQualityInfo = (props: Props) => {
   return (
     <div className="air-quality-info-wrapper">
       <div className="air-quality-info-wrapper-value">
-        <span>8.6</span>
+        <span>{props.value}</span>
       </div>
       <div className="air-quality-info-wrapper-name">
-        <span>PM2.5</span>
+        <span>{props.tag}</span>
       </div>
     </div>
   );

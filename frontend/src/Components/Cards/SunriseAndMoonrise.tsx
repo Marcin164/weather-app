@@ -2,13 +2,16 @@ import React from "react";
 import Card from "../Card";
 import SunriseAndMoonriseInfo from "./SunriseAndMoonriseInfo";
 
-interface Props {}
+interface Props {
+  sunrise:string
+  moonrise:string
+}
 
 const SunriseAndMoonrise = (props: Props) => {
   return (
     <Card title="Sunrise and moonrise" className="sunrise-moonrise-card">
-        <SunriseAndMoonriseInfo/>
-        <SunriseAndMoonriseInfo/>
+        <SunriseAndMoonriseInfo img="Sunrise" hour={props.sunrise} title="Sunrise"/>
+        <SunriseAndMoonriseInfo img="Moonrise" hour={props.moonrise} title="Moonrise"/>
     </Card>
   );
 };

@@ -4,13 +4,14 @@ import {
   LineChart,
   Line,
   XAxis,
-  YAxis,
   Tooltip,
   Legend,
 } from "recharts";
 import Card from "../Card";
 
-interface Props {}
+interface Props {
+  temperatureAndHumidityValues:Array<any>
+}
 
 const TemperatureAndHumidity = (props: Props) => {
   return (
@@ -19,12 +20,12 @@ const TemperatureAndHumidity = (props: Props) => {
       className="temperature-humidity-card"
     >
       <ResponsiveContainer width="100%" height={240}>
-        <LineChart>
-          <XAxis dataKey="name" />
+        <LineChart data={props.temperatureAndHumidityValues}>
+          <XAxis dataKey="hour" />
           <Tooltip />
           <Legend />
-          <Line type="monotone" dataKey="pv" stroke="#8884d8" />
-          <Line type="monotone" dataKey="uv" stroke="#82ca9d" />
+          <Line type="monotone" dataKey="temperature" stroke="#8884d8" />
+          <Line type="monotone" dataKey="humidity" stroke="#82ca9d" />
         </LineChart>
       </ResponsiveContainer>
     </Card>

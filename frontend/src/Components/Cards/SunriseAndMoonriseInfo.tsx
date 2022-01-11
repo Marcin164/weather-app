@@ -1,15 +1,19 @@
 import React from "react";
 
-interface Props {}
+interface Props {
+  img:string
+  title:string
+  hour:string
+}
 
 const SunriseAndMoonriseInfo = (props: Props) => {
   return (
     <div className="sunrise-moonrise-wrapper">
-      <div className="sunrise-moonrise-wrapper-header">Sunrise</div>
+      <div className="sunrise-moonrise-wrapper-header">{props.title}</div>
       <div className="sunrise-moonrise-wrapper-info">
-        <img src="" alt="" className="sunrise-moonrise-wrapper-info-image" />
+        <img src={`/images/${props.img}.svg`} alt="" className="sunrise-moonrise-wrapper-info-image" />
         <div className="sunrise-moonrise-wrapper-info-hour">
-          <span>6:38</span>
+          <span>{props.hour}</span>
         </div>
       </div>
     </div>

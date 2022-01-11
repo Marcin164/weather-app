@@ -1,16 +1,20 @@
 import React from 'react'
 
 interface Props {
-    
+    hour:number
+    windStrength:number
+    windDirection:string
+    weather:string
 }
 
 const WeatherAndWindInfo = (props: Props) => {
+  console.log("URL:",props.weather)
     return (
         <div className="weather-wind-wrapper">
-          <img src="" alt="" className="weather-wind-wrapper-image" />
-          <img src="" alt="" className="weather-wind-wrapper-icon"/>
-          <div className="weather-wind-wrapper-info">10m/s</div>
-          <div className="weather-wind-wrapper-hour">9:00</div>
+          <img src={`/images/${props.weather}.svg`} alt="" className="weather-wind-wrapper-image" />
+          <img src={`/images/${props.windDirection}.svg`} alt="" className="weather-wind-wrapper-icon"/>
+          <div className="weather-wind-wrapper-info">{props.windStrength}m/s</div>
+          <div className="weather-wind-wrapper-hour">{props.hour}:00</div>
         </div>
     )
 }
