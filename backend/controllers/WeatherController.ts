@@ -9,3 +9,12 @@ module.exports.weather_get = async (req:any , res:any) => {
         res.status(400).send(err)
     }
 }
+
+module.exports.cities_get = async (req:any, res:any) => {
+    try{
+        const cities = await Weather.getCities()
+        res.status(200).send(cities)
+    }catch(err:any){
+        res.status(400).send(err)
+    }
+}

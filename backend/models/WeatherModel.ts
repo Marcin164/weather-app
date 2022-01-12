@@ -35,6 +35,15 @@ WeatherSchema.statics.getWeatherData = async function (data:any){
   throw Error("Could not find any data")
 }
 
+WeatherSchema.statics.getCities = async function (data:any){
+  let date = new Date()
+  let day:number = date.getDate()
+  let month:number = date.getMonth()+1
+  let year:number = date.getFullYear()
+  const cities = await this.find({date: `${day}.${month}.${year}`})
+  return cities
+}
+
 const WeatherModel = model(
   "weather",
   WeatherSchema
