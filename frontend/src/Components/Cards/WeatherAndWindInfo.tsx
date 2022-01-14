@@ -8,7 +8,6 @@ interface Props {
 }
 
 const WeatherAndWindInfo = (props: Props) => {
-  console.log("URL:",props.weather)
     return (
         <div className="weather-wind-wrapper">
           <img src={`/images/${props.weather}.svg`} alt="" className="weather-wind-wrapper-image" />

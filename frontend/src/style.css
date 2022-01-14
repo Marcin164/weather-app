@@ -109,6 +109,7 @@ html, body, #root{
     display:flex;
     align-items: center;
     padding:0px 10px;
+    margin-bottom:10px;
 }
 
 .show-day-navbar{

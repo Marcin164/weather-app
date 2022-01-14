@@ -15,12 +15,12 @@ const WeatherBoard = (props: Props) => {
   const [weatherAndWind, setWeatherAndWind] = useState([{}])
   const [temperatureAndHumidity, setTemperatureAndHumidity] = useState([{}])
 
-  const createRainfallData = () => {
+  const createData = () => {
     let rainfallArray:Array<Object> = []
     let weatherAndWindArray:Array<Object> = []
     let temperatureAndHumidityArray:Array<Object> = []
 
-    for(let i = 0 ; i< props.weather.data.length; i++){
+    for(let i:number = 0 ; i< props.weather.data.length; i++){
 
       let rainfallObject:Object = {
         rainfall: props.weather.data[i].rainFall,
@@ -51,7 +51,9 @@ const WeatherBoard = (props: Props) => {
   }
 
   useEffect(() => {
-    props.weather.data !== undefined ? createRainfallData() : console.log("There is some")
+    if(props.weather.data !== undefined){
+      createData()
+    } 
   }, [props.weather.data])
 
   return (

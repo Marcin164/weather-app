@@ -1,12 +1,16 @@
-import React from "react";
+import React, { useContext } from "react";
+import {GetValuesContext} from "../../App"
 
-interface Props {}
+interface Props {
+  value:string
+}
 
 const NavbarTile = (props: Props) => {
+  const listener:any = useContext(GetValuesContext)
   return (
-    <div className="navbar-tile">
-      <span>Wrocław</span>
-    </div>
+    <button className="navbar-tile" onClick={listener} value={props.value}>
+      {props.value}
+    </button>
   );
 };
 
