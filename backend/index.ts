@@ -9,7 +9,7 @@ app.use(cors());
 app.use(express.json());
 
 const CONN_URL = 'mongodb+srv://SPECJAL:MTG539123@cluster0.wtkcx.mongodb.net/WeatherApp?retryWrites=true&w=majority';
-const PORT = 4000;
+const PORT = 3001;
 
 const connection = mongoose.connect(CONN_URL)
 
