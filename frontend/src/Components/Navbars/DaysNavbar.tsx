@@ -1,5 +1,9 @@
 import React, { useState, useEffect } from "react";
+import Navbar from "./Navbar";
+import NavbarClose from "./NavbarClose";
+import NavbarShow from "./NavbarShow";
 import NavbarTile from "./NavbarTile";
+import Overlay from "./Overlay";
 
 const DaysNavbar = () => {
   const [isDaysNavbarVisible, setIsDaysNavbarVisible] = useState(false);
@@ -82,25 +86,17 @@ const DaysNavbar = () => {
 
   return (
     <>
-      <button className="show-navbar show-days-navbar" onClick={toggleNavbar}>
-        <img src="/images/Clock.svg" alt="" className="show-navbar-image"></img>
-      </button>
-      <div
-        className={`navbar days-navbar ${
-          isDaysNavbarVisible ? "show-day-navbar" : "hide-day-navbar"
-        }`}
-      >
-        <button className="navbar-close" onClick={toggleNavbar}>
-          X
-        </button>
+      <NavbarShow onClick={toggleNavbar} className="show-days-navbar"/>
+      <Navbar className={`days-navbar ${
+            isDaysNavbarVisible ? "show-day-navbar" : "hide-day-navbar"
+          }`}>
+        <NavbarClose onClick={toggleNavbar} />
         {
           days.map((day) => <NavbarTile value={day}/>)
         }
-      </div>
-      <button
-        className={`overlay ${
-          isDaysNavbarVisible ? "show-overlay" : "hide-overlay"
-        }`}
+      </Navbar>
+      <Overlay
+        isNavbarVisible={isDaysNavbarVisible}
         onClick={toggleNavbar}
       />
     </>
