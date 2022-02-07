@@ -13,7 +13,6 @@ const WeatherAndWind = (props: Props) => {
         {
           props.weatherAndWindValues.map((value) => <WeatherAndWindInfo hour={value.hour} windStrength={value.windStrength} windDirection={value.windDirection} weather={value.weather}/>)
         }
-        
       </div>
     </Card>
   );

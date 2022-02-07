@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import Navbar from "./Navbar";
 import NavbarClose from "./NavbarClose";
 import NavbarShow from "./NavbarShow";
@@ -17,11 +17,12 @@ const DaysNavbar = () => {
     let array:Array<string> = []
 
     let date:Date = new Date()
-    let day:number = date.getDate()
+    let day:number = date.getDate()-1
     let month:number = date.getMonth()+1
     let year:number = date.getFullYear()
 
     for(let i:number = 0 ; i<7 ; i++){
+      day += 1
       if(month === 1 || month === 3 || month === 5 || month === 7 || month === 8 || month === 10 || month === 12){
         if (day > 31) {
           day = 1;
@@ -74,7 +75,7 @@ const DaysNavbar = () => {
           }
         }
       }
-      let fullDate = `${day+i}.${month}.${year}`
+      let fullDate = `${day}.${month}.${year}`
       array.push(fullDate)
     }
     setDays(array)
@@ -87,9 +88,7 @@ const DaysNavbar = () => {
   return (
     <>
       <NavbarShow onClick={toggleNavbar} className="show-days-navbar"/>
-      <Navbar className={`days-navbar ${
-            isDaysNavbarVisible ? "show-day-navbar" : "hide-day-navbar"
-          }`}>
+      <Navbar className={`days-navbar ${isDaysNavbarVisible ? "show-day-navbar" : "hide-day-navbar"}`}>
         <NavbarClose onClick={toggleNavbar} />
         {
           days.map((day) => <NavbarTile value={day}/>)

@@ -12,7 +12,7 @@ const Rainfall = (props: Props) => {
     <ResponsiveContainer width="100%" height={240}>
       <BarChart className="chart" height={240} data={props.rainfallValues}>
         <XAxis dataKey="hour" />
-        <Bar dataKey="rainfall" fill="#1280E4"/>
+        <Bar dataKey="rainfall" fill="#1A5F7A"/>
         <Tooltip/>
       </BarChart>
     </ResponsiveContainer>

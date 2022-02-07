@@ -1,4 +1,4 @@
-import React, { useContext, useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import AirQuality from "./Cards/AirQuality";
 import Events from "./Cards/Events";
 import Rainfall from "./Cards/Rainfall";
@@ -8,6 +8,8 @@ import WeatherAndWind from "./Cards/WeatherAndWind";
 
 interface Props {
   weather: any;
+  city: string
+  day: string;
 }
 
 const WeatherBoard = (props: Props) => {
@@ -54,15 +56,19 @@ const WeatherBoard = (props: Props) => {
     if(props.weather.data !== undefined){
       createData()
     } 
+    return function cleanup() {
+      setRainfall([])
+    }
   }, [props.weather.data])
 
   return (
     <div className="dashboard">
-      <AirQuality airQualityValues={props.weather.airQuality}/>
+      <div className="topbar">{props.city}, {props.day}</div>
+      <AirQuality airQualityValues={props.weather.airQuality} airQualityStatusValues={props.weather.airQualityStatus}/>
       <Rainfall rainfallValues={rainfall}/>
       <WeatherAndWind weatherAndWindValues={weatherAndWind}/>
       <SunriseAndMoonrise sunrise={props.weather.sunRise} moonrise={props.weather.moonRise}/>
-      <Events />
+      <Events eventsValues={props.weather.events}/>
       <TemperatureAndHumidity temperatureAndHumidityValues={temperatureAndHumidity}/>
     </div>
   );

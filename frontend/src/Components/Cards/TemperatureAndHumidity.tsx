@@ -5,7 +5,6 @@ import {
   Line,
   XAxis,
   Tooltip,
-  Legend,
 } from "recharts";
 import Card from "../Card";
 
@@ -23,7 +22,6 @@ const TemperatureAndHumidity = (props: Props) => {
         <LineChart data={props.temperatureAndHumidityValues}>
           <XAxis dataKey="hour" />
           <Tooltip />
-          <Legend />
           <Line type="monotone" dataKey="temperature" stroke="#8884d8" />
           <Line type="monotone" dataKey="humidity" stroke="#82ca9d" />
         </LineChart>

@@ -1,17 +1,19 @@
-import React, { useState } from "react";
 import Card from "../Card";
 import AirQualityInfo from "./AirQualityInfo";
 import AirQualityStatus from "./AirQualityStatus";
 
 interface Props {
   airQualityValues: any;
+  airQualityStatusValues: any
 }
 
 const AirQuality = (props: Props) => {
-  if (props.airQualityValues !== undefined) {
+  if (props.airQualityValues === undefined) {
+    return <h1>Loading...</h1>;
+  }
     return (
       <Card title="Air Quality" className="air-quality-card">
-        <AirQualityStatus />
+        <AirQualityStatus title={props.airQualityStatusValues.title} subTitle={props.airQualityStatusValues.subTitle}/>
         <div className="air-quality-info">
           {props.airQualityValues.map((airQualityvalue: any) => (
             <AirQualityInfo
@@ -22,9 +24,6 @@ const AirQuality = (props: Props) => {
         </div>
       </Card>
     );
-  }else{
-    return <h1>Loading...</h1>;
-  }
 };
 
 export default AirQuality;

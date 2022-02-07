@@ -1,15 +1,18 @@
 import React from "react";
 
-interface Props {}
+interface Props {
+  title: string,
+  subTitle: string
+}
 
 const AirQualityStatus = (props: Props) => {
   return (
     <div className="status">
       <div className="status-header">
-        <span>Good</span>
+        <span>{props.title}</span>
       </div>
       <div className="status-info">
-        <span>Get deep breath...</span>
+        <span>{props.subTitle}</span>
       </div>
     </div>
   );

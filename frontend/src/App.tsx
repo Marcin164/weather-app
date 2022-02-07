@@ -43,7 +43,7 @@ function App() {
       <GetValuesContext.Provider value={getDayValue}>
         <DaysNavbar />
       </GetValuesContext.Provider>
-      <WeatherBoard weather={weather} />
+      <WeatherBoard weather={weather} city={cities} day={days}/>
       <GetValuesContext.Provider value={getCityValue}>
         <CitiesNavbar />
       </GetValuesContext.Provider>
