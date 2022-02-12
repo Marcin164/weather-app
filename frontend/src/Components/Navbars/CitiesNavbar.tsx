@@ -7,9 +7,7 @@ import Overlay from "./Overlay";
 import SearchInput from "./SearchInput";
 import NavbarShow from "./NavbarShow";
 
-interface Props {}
-
-const CitiesNavbar = (props: Props) => {
+const CitiesNavbar = () => {
   const [isCitiesNavbarVisible, setIsCitiesNavbarVisible] = useState(false);
   const [cities, setCities] = useState([]);
   const [searchValue, setSearchValue] = useState("");
@@ -46,7 +44,7 @@ const CitiesNavbar = (props: Props) => {
           .sort()
           .filter(getFilteredCities)
           .map((city) => (
-            <NavbarTile value={city} />
+            <NavbarTile key={city} value={city} />
           ))}
       </Navbar>
       <Overlay

@@ -1,8 +1,8 @@
-import Header from "./Header"
+import Header from "../Header"
 
 interface Props {
-    title:any
-    children:any
+    title:string
+    children?: React.ReactChild | React.ReactNode
     className:string
 }
 

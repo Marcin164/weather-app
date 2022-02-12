@@ -1,6 +1,6 @@
 interface Props {
-    onClick?: () => any
-    className?: String
+    onClick?: () => void
+    className?:string
 }
 
 const NavbarShow = (props: Props) => {

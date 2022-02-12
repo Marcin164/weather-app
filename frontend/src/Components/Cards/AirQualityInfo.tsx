@@ -1,7 +1,5 @@
-import React from "react";
-
 interface Props {
-  value:string;
+  value:number;
   tag:string
 }
 
@@ -15,7 +13,7 @@ const AirQualityInfo = (props: Props) => {
         <span>{props.tag}</span>
       </div>
     </div>
-  );
+  ); 
 };
 
 export default AirQualityInfo;

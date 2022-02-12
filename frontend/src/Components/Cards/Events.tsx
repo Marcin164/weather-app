@@ -1,9 +1,8 @@
-import React from "react";
-import Card from "../Card";
+import Card from "./Card";
 import EventInfo from "./EventInfo";
 
 interface Props {
-  eventsValues: any
+  eventsValues: Array<string>
 }
 
 const Events = (props: Props) => {
@@ -13,7 +12,7 @@ const Events = (props: Props) => {
   return (
     <Card title="Special Events" className="events-card">
       <div className="events-panel">
-        {props.eventsValues.map((eventValue:any) => <EventInfo event={eventValue}/>)}
+        {props.eventsValues.map((eventValue:any) => <EventInfo key={eventValue} event={eventValue}/>)}
       </div>
     </Card>
   );

@@ -1,12 +1,15 @@
-import React from "react";
+import { RainFallIF } from "../../Helper/Interfaces";
 import {ResponsiveContainer, BarChart, XAxis, Bar, Tooltip } from "recharts";
-import Card from "../Card";
+import Card from "./Card";
 
 interface Props {
-  rainfallValues:Array<Object>
+  rainfallValues:Array<RainFallIF>
 }
 
 const Rainfall = (props: Props) => {
+  if (props.rainfallValues === undefined) {
+    return <h1>Loading...</h1>;
+  }
   return (
     <Card title="Rainfall" className="rainfall-card">
     <ResponsiveContainer width="100%" height={240}>

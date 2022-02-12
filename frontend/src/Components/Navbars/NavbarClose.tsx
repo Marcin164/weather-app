@@ -1,6 +1,6 @@
 interface Props {
-    onClick: () => void
-    className?: String
+    onClick?: () => void
+    className?: string
 }
 
 const NavbarClose = (props: Props) => {

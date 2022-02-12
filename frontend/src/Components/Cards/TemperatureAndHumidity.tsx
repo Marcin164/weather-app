@@ -1,4 +1,4 @@
-import React from "react";
+import {TemperatureAndHumidityIF} from "../../Helper/Interfaces"
 import {
   ResponsiveContainer,
   LineChart,
@@ -6,13 +6,16 @@ import {
   XAxis,
   Tooltip,
 } from "recharts";
-import Card from "../Card";
+import Card from "./Card";
 
 interface Props {
-  temperatureAndHumidityValues:Array<any>
+  temperatureAndHumidityValues:Array<TemperatureAndHumidityIF>
 }
 
 const TemperatureAndHumidity = (props: Props) => {
+  if (props.temperatureAndHumidityValues === undefined) {
+    return <h1>Loading...</h1>;
+  }
   return (
     <Card
       title="Temperature and humidity"

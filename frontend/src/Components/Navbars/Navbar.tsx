@@ -1,5 +1,5 @@
 interface Props {
-    children: any
+    children?: React.ReactChild | React.ReactNode
     className?: String
 }
 

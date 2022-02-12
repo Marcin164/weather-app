@@ -21,10 +21,10 @@ const DaysNavbar = () => {
     let dayNumber:number = date.getDate()
     let monthNumber:number = date.getMonth()+1
     let yearNumber:number = date.getFullYear()
+    let helper:Helper = new Helper()
 
     for(let i:number = 0 ; i<7 ; i++){
-      let helper = new Helper(dayNumber, monthNumber, yearNumber, i)
-      let dateObject = helper.changeMonthAndYear()
+      let dateObject = helper.changeMonthAndYear(dayNumber, monthNumber, yearNumber, i)
       let fullDate = `${dateObject.day}.${dateObject.month}.${dateObject.year}`
       array.push(fullDate)
     }
@@ -41,7 +41,7 @@ const DaysNavbar = () => {
       <Navbar className={`days-navbar ${isDaysNavbarVisible ? "show-day-navbar" : "hide-day-navbar"}`}>
         <NavbarClose onClick={toggleNavbar} />
         {
-          days.map((day) => <NavbarTile value={day}/>)
+          days.map((day) => <NavbarTile key={day} value={day}/>)
         }
       </Navbar>
       <Overlay

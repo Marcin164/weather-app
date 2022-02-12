@@ -9,11 +9,33 @@ export const GetValuesContext = createContext(
 );
 
 function App() {
-  let date = new Date();
-  let day = date.getDate();
-  let month = date.getMonth()+1;
-  let year = date.getFullYear();
-  const [weather, setWeather] = useState({});
+  let date:Date = new Date();
+  let day:number = date.getDate();
+  let month:number = date.getMonth()+1;
+  let year:number = date.getFullYear();
+  const [weather, setWeather] = useState({
+    data: [{  
+      hour: 0,
+      humidity: 0,
+      temperature: 0,
+      windStrength: 0,
+      windDirection: "",
+      pressure: 0,
+      weather: "",
+      rainFall: 0,
+    }],
+    airQuality: [{  
+      tag: "",
+      value: 0
+    }],
+    airQualityStatus: {  
+      title: "",
+      subTitle: ""
+    },
+    events: [""],
+    sunRise: "",
+    moonRise: "",
+  });
   const [days, setDays] = useState(`${day}.${month}.${year}`);
   const [cities, setCities] = useState("Amsterdam");
 
@@ -29,12 +51,12 @@ function App() {
   }, [days, cities]);
 
   const getDayValue = (e: React.ChangeEvent<HTMLInputElement>) => {
-    let value = e.currentTarget.value;
+    let value:string = e.currentTarget.value;
     setDays(value);
   };
 
   const getCityValue = (e: React.ChangeEvent<HTMLInputElement>) => {
-    let value = e.currentTarget.value;
+    let value:string = e.currentTarget.value;
     setCities(value);
   };
 

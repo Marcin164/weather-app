@@ -1,7 +1,5 @@
-import React from 'react'
-
 interface Props {
-    event:any
+    event:string
 }
 
 const EventInfo = (props: Props) => {
