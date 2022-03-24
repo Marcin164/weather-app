@@ -6,7 +6,7 @@ interface Props {
 const NavbarClose = (props: Props) => {
   return (
     <button className={`navbar-close ${props.className}`} onClick={props.onClick}>
-      X
+      <img src="/images/Close.svg" alt="Close"/>
     </button>
   );
 };

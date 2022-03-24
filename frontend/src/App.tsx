@@ -3,6 +3,7 @@ import axios from "axios";
 import CitiesNavbar from "./Components/Navbars/CitiesNavbar";
 import DaysNavbar from "./Components/Navbars/DaysNavbar";
 import WeatherBoard from "./Components/WeatherBoard";
+import { WeatherIF } from "./Helper/Interfaces";
 
 export const GetValuesContext = createContext(
   (e: React.ChangeEvent<HTMLInputElement>) => {}
@@ -13,31 +14,9 @@ function App() {
   let day:number = date.getDate();
   let month:number = date.getMonth()+1;
   let year:number = date.getFullYear();
-  const [weather, setWeather] = useState({
-    data: [{  
-      hour: 0,
-      humidity: 0,
-      temperature: 0,
-      windStrength: 0,
-      windDirection: "",
-      pressure: 0,
-      weather: "",
-      rainFall: 0,
-    }],
-    airQuality: [{  
-      tag: "",
-      value: 0
-    }],
-    airQualityStatus: {  
-      title: "",
-      subTitle: ""
-    },
-    events: [""],
-    sunRise: "",
-    moonRise: "",
-  });
-  const [days, setDays] = useState(`${day}.${month}.${year}`);
-  const [cities, setCities] = useState("Amsterdam");
+  const [weather, setWeather] = useState<any>({});
+  const [days, setDays] = useState<string>(`${day}.${month}.${year}`);
+  const [cities, setCities] = useState<string>("Amsterdam");
 
   useEffect(() => {
     axios

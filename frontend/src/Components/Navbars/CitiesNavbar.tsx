@@ -34,7 +34,7 @@ const CitiesNavbar = () => {
 
   return (
     <>
-      <NavbarShow onClick={toggleNavbar} className="show-cities-navbar"/>
+      <NavbarShow onClick={toggleNavbar} className="show-cities-navbar" image="City"/>
       <Navbar className={`cities-navbar ${
             isCitiesNavbarVisible ? "show-city-navbar" : "hide-city-navbar"
           }`}>

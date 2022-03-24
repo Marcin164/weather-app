@@ -3,7 +3,7 @@ import Header from "../Header"
 interface Props {
     title:string
     children?: React.ReactChild | React.ReactNode
-    className:string
+    className?:string
 }
 
 const Card = (props: Props) => {

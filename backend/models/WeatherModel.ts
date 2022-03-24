@@ -1,4 +1,10 @@
+import mongoose from "mongoose";
 import { Schema, model } from "mongoose";
+
+type WeatherData = {
+  city:String
+  date:String
+}   
 
 const WeatherSchema:Schema = new Schema({
   date: String,
@@ -25,7 +31,7 @@ const WeatherSchema:Schema = new Schema({
   moonRise: String,
 });
 
-WeatherSchema.statics.getWeatherData = async function (data:any){
+WeatherSchema.statics.getWeatherData = async function (data:WeatherData){
   if(!data) throw Error("And error with data occured!")
   const weather = await this.findOne({
     city: data.city,
@@ -36,7 +42,7 @@ WeatherSchema.statics.getWeatherData = async function (data:any){
 }
 
 WeatherSchema.statics.getCities = async function (){
-  let date = new Date()
+  let date:Date = new Date()
   let day:number = date.getDate()
   let month:number = date.getMonth()+1
   let year:number = date.getFullYear()

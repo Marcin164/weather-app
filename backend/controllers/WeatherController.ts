@@ -1,3 +1,5 @@
+import { AnyError } from "mongodb"
+
 const Weather = require('../models/WeatherModel')
 
 module.exports.weather_get = async (req:any , res:any) => {

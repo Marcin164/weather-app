@@ -37,7 +37,7 @@ const DaysNavbar = () => {
 
   return (
     <>
-      <NavbarShow onClick={toggleNavbar} className="show-days-navbar"/>
+      <NavbarShow onClick={toggleNavbar} className="show-days-navbar" image="Calendar"/>
       <Navbar className={`days-navbar ${isDaysNavbarVisible ? "show-day-navbar" : "hide-day-navbar"}`}>
         <NavbarClose onClick={toggleNavbar} />
         {
